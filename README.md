@@ -1,4 +1,2 @@
 # TritonAssistant
-<<<<<<< HEAD
-# TEST
-
+#Gao Pu
