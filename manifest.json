@@ -10,6 +10,10 @@
       "all_frames" : true,
       "js": [ "login_Tritonlink.js" ],
       "matches": [ "*://a4.ucsd.edu/tritON/Authn/*" ]
+   }, {
+	  "all_frames" : true,
+      "js": [ "schedule.js" ],
+      "matches": [ "*://act.ucsd.edu/myTritonlink20/display.htm" ]
    }],
    "description": "Chrome Extension for UCSD",
    "icons": {
