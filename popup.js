@@ -40,7 +40,7 @@
 })();
 
 function findNextClass(classInfo){
-	var date = new Date("April 10, 2017 11:13:00");	
+	var date = new Date();	
 	var day = date.getDay()-1;
 	var hrs = date.getHours();
 	var mins = date.getMinutes();
