@@ -1,5 +1,5 @@
 ///////////////////////////////// ClassLinks Section
-<script>
+
 //localStorage.setItem("courseList", '');
 
 if (! localStorage.getItem("courseList")) {
@@ -68,5 +68,5 @@ function loadClasses() {
 for(var i = 0; i < list.length; i++) {loadOneClass(i)}
 }
 loadClasses();
-</script>
+
 /////////////////////////////////
