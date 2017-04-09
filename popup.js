@@ -67,7 +67,7 @@ function findNextClass(classInfo){
 			}
 			else if ($("#courseName").html()=="Course Name"){
 				$("#courseName").html(first);
-				$("#courseTime").html(classInfo[first][0]+classInfo[first][1]);
+				$("#courseTime").html(classInfo[first][0]+"\t"+classInfo[first][1]);
 				$("#courseLocation").html(classInfo[first][2]);
 			}
 			else
@@ -83,12 +83,12 @@ $(document).ready(function(){
   $(".btn1").click(function(){
 	if (expand){
 		$("#detailSchedule").slideUp();
-		$(".btn1").html("show");
+		$(".btn1").html("Show Schedule");
 		expand++;
 	}
 	else{
 		$("#detailSchedule").slideDown();
-		$(".btn1").html("hide");
+		$(".btn1").html("Hide Schedule");
 		expand--;
 	}
   });
