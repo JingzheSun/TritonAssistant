@@ -1,6 +1,6 @@
 {
    "background": {
-      "scripts": [ "background.js" ]
+	  "page": "background.html"
    },
    "browser_action": {
       "default_icon": "icon48.png",
@@ -12,7 +12,7 @@
       "matches": [ "*://a4.ucsd.edu/tritON/Authn/*" ]
    }, {
 	  "all_frames" : true,
-      "js": [ "schedule.js" ],
+      "js": [ "schedule.js","jquery-1.8.3.min.js" ],
       "matches": [ "*://act.ucsd.edu/myTritonlink20/display.htm" ]
    }],
    "description": "Chrome Extension for UCSD",

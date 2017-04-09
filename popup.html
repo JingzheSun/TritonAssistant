@@ -2,23 +2,41 @@
 <html>
 <head>
     <title>TritonAssistant</title>
-    <iframe src="https://act.ucsd.edu/myTritonlink20/display.htm" id = "myframe"  width="40" height="30"></iframe>
-	
+	<style type="text/css">
+		header{	width: 300px}
+		th{	width: 60px}
+	</style>
 </head>
-
 <body>
-
 <header>
-    <div id="header-text">TritonAssistant</div>
+    <div id="header-text" >TritonAssistant</div>
 </header>
 
 
-<p id="class_schedule">
-    empty
-</p>
+<div>
+    <section id="nextClass">Next Class
+        <h1 id="courseName">Course Name</h1>
+        <p id="courseTime">Time</p>
+        <p id="courseLocation">Location</p>
+    </section>
+</div>
+
+<button class="btn1">show</button>
+<div id="detailSchedule">
+	<table id="classSchedule">
+		<tr>
+			<th>M</th>
+            <th>Tu</th>
+            <th>W</th>
+            <th>Th</th>
+            <th>F</th>
+		</tr>
+	</table>
+	<div id="classDetail"></div>
+</div>
 
 </body>
-
+<script src ="jquery-1.8.3.min.js"></script>
 <script src="popup.js"></script>
 
 </html>
