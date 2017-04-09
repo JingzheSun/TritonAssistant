@@ -10,7 +10,7 @@ if (! localStorage.getItem("courseList")) {
 }
 
 function addClass() {
-var x1 = document.getElementById("courseName").value;
+var x1 = document.getElementById("description").value;
 var x2 = document.getElementById("courseWeb").value;
 
 list.push(x1);
@@ -20,6 +20,7 @@ localStorage.setItem(x1,x2);
 
 loadOneClass(list.length-1);
 }
+document.querySelector('#addClass').addEventListener('click', addClass);
 
 function removeClass(i) {
 var x1 = list[i];
@@ -46,6 +47,7 @@ function loadOneClass(i) {
 	para.appendChild(node);
 	para.title = x1;
 	para.href = x2;
+	para.target="_blank";
 
 	var a = document.createElement("p");
 	a.appendChild(para);
