@@ -4,9 +4,11 @@
     loginField = document.getElementById('ssousername');
     passField = document.getElementById('ssopassword');
     var btm = document.getElementsByTagName('input')[3];
-    var username = username;
-    loginField.value = "yah072";
-    var password = password;
-    passField.value = "10136@CJ";
-    btm.click();
+    chrome.runtime.sendMessage({user:"require"}, function(response) {
+    if (response){
+        loginField.value = response.username;
+        passField.value = response.password;
+        btm.click();
+        };
+    });
 }(chrome));
