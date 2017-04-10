@@ -1,6 +1,5 @@
 // Update HTML inside schedule section
 $("#detailSchedule").slideUp();
-title =
 $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th></tr>");
 
 (function (){	
