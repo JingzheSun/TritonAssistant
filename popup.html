@@ -3,17 +3,20 @@
 <head>
     <title>TritonAssistant</title>
 	<style type="text/css">
-		header{	width: 300px}
-		th{	width: 60px}
+		header{	width: 350px;}
+		th{	width: 70px;}
+		td{ text-align:center;}
+		body {background-image: url(background.gif);background-repeat: repeat;}
+		#nextClass { font-size: 15px;}
 	</style>
 </head>
 <body>
 <header>
-    <div id="header-text" >TritonAssistant</div>
+    <h1 id="header-text" >TritonAssistant</h1>
 </header>
 
 <div>
-    <section id="nextClass">Next Class
+    <section id="nextClass"><Strong>Next Class</Strong>
         <h1 id="courseName">Course Name</h1>
         <h1 id="courseTime">Time</h1>
         <h1 id="courseLocation">Location</h1>
@@ -43,8 +46,8 @@
                     <details id ="dfive">
                         <summary class="section-item">Add Class</summary>
                         Add Course:<br>
-                        Course Name: <input type="text" id="description" value="ECE 252"><br>
-                        Course Website: <input type="text" id="courseWeb" value="http://example.com">
+                        Course Name: <input type="text" id="description" placeholder="ECE 123A"><br>
+                        Course Website: <input type="text" id="courseWeb" placeholder="http://example.com">
                         <button id="addClass">ADD</button>
                     </details>
                 </section>

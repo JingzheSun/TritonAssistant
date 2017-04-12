@@ -6,7 +6,7 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 	var scheduletext = localStorage["schedule"];
 	var tdPatt=/<td>(.|\n)*?<\/td>/gm;
 	var classBlocks = scheduletext.match(tdPatt);
-	var classPatt = /[A-Z]{3,6} [0-9]{1,3}\w?/gm;
+	
 	var timePatt = /[0-9]{1,2}:.*(0am|0pm)/gm;
 	var dict = {0: 'M', 1: 'Tu', 2: 'W', 3: 'Th', 4: 'F'};
 	var classInfo ={}
@@ -14,9 +14,10 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 	for(i=0; i< classBlocks.length/5; i++){
 		var newRow = "<tr>";
 		for(j=0; j< 5; j++){
+			var classPatt = /[A-Z]{3,6} [0-9]{1,4}\w*/gm;
 			className =classPatt.exec(classBlocks[i*5+j]);
-			className = className? className :"";
-			className = /Discussion/.test(classBlocks[i*5+j])? className + "-D" : className;
+			className = className||"";
+			className = /Discussion/.test(classBlocks[i*5+j])? (className + "-D") : className;
 			newRow = newRow + "<td>" + className + "</td>";
 			
 			if (!className)
@@ -68,19 +69,19 @@ function findNextClass(classInfo){
 			courseHr += pm;
 			courseMin = t.substr(t.search(":")+1,2);
 			if(i<day ||(i==day && courseHr <hrs ||(courseHr == hrs && courseMin < mins))){
+				continue;
+			}
+			else{
 				$("#courseName").html(course);
-				$("#courseTime").html(classInfo[course][0]+classInfo[course][1]);
+				$("#courseTime").html(classInfo[course][0]+"\t"+classInfo[course][1]);
 				$("#courseLocation").html(classInfo[course][2]);
-			}
-			else if ($("#courseName").html()=="Course Name"){
-				$("#courseName").html(first);
-				$("#courseTime").html(classInfo[first][0]+"\t"+classInfo[first][1]);
-				$("#courseLocation").html(classInfo[first][2]);
-			}
-			else
 				return;
+			}
 		}
 	}
+	$("#courseName").html(first);
+	$("#courseTime").html(classInfo[first][0]+"\t"+classInfo[first][1]);
+	$("#courseLocation").html(classInfo[first][2]);
 }
 
 
