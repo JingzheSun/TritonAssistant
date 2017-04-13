@@ -45,5 +45,5 @@ function updatebadge() {
     }
     xmlhttp.open("POST", "https://tritoned.ucsd.edu/webapps/login/", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("action=login&login=Login&new_loc=&password=10136%40CJ&user_id=yah072");
+    xmlhttp.send("action=login&login=Login&new_loc=&password=" + localStorage['password'] +"&user_id="+localStorage['username']);
 }
