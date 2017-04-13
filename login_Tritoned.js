@@ -4,11 +4,14 @@
     loginField = document.getElementById('user_id');
     passField = document.getElementById('password');
     var btm = document.getElementById('entry-login');
-    chrome.runtime.sendMessage({user:"require"}, function(response) {
-    if (response){
-        loginField.value = response.username;
-        passField.value = response.password;
-        btm.click();
-        };
-    });
+    if (loginField && passField) {
+        chrome.runtime.sendMessage({user: ['tritoned',(new Date()).valueOf()]}, function (response) {
+            if (response) {
+                loginField.value = response.username;
+                passField.value = response.password;
+                btm.click();
+            }
+            ;
+        });
+    };
 }(chrome));
