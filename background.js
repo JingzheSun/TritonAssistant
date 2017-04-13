@@ -6,16 +6,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({username: localStorage["username"],
                       password: localStorage["password"]});
     }
-    if (request.badges){
+/*    if (request.badges){
         var hosturl = 'https://tritoned.ucsd.edu/webapps/login/';
         var postData = {'user_id':localStorage["username"],'password':localStorage["password"]};
         $.post(hosturl, postData, function(data) {
-        var reg = /AlertsOnMyBb_____AlertsTool_AXLabel(.*?)</gm;
-        localStorage.setItem("badges", RegExp.$1);
-		 
         });
-        sendResponse({badges: localStorage["badges"]});
-    };
+	sendResponse({badges: localStorage["badges"]});
+    };*/
 });
 
 document.querySelector("#Login").addEventListener('click', function (){

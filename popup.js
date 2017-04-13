@@ -41,10 +41,10 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 	}
     findNextClass(classInfo);
 
-    chrome.runtime.sendMessage({badges: "require"}, function(response) {
+/*    chrome.runtime.sendMessage({badges: "require"}, function(response) {
 	if (response.badges)
             $("#badges").html(response.badges);
-    });
+    });*/
 })();
 
 function findNextClass(classInfo){
