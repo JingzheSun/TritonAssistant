@@ -103,3 +103,12 @@ $(document).ready(function(){
 	}
   });
 });
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    	alert(/La Jolla/gm.exec(xmlhttp.responseText));
+    }
+}
+xmlhttp.open("GET", "https://weather.com/weather/today/l/32.88,-117.24", true);
+xmlhttp.send();
