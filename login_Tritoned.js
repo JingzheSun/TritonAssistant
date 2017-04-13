@@ -1,6 +1,12 @@
 // Auto login for tritoned
 
 (function (chrome) {
+    var tritonedcookie = document.cookie;
+    /JSESSIONID=(\w*);/gm.exec(tritonedcookie)
+    var cookieget = RegExp.$1;
+    //alert(cookieget);
+    chrome.runtime.sendMessage({'storage' : 'tritonedcookie','value' : cookieget});
+
     loginField = document.getElementById('user_id');
     passField = document.getElementById('password');
     var btm = document.getElementById('entry-login');

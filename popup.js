@@ -43,7 +43,9 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 
     chrome.runtime.sendMessage({badges: "require"}, function(response) {
 	if (response.badges)
-            $("#badges").html(response.badges);
+		$("#badges").html(response.badges);
+	else
+		$("#badges").html('click to update cookie');
     });
 })();
 
