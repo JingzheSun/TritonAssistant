@@ -3,11 +3,14 @@
 <head>
     <title>TritonAssistant</title>
 	<style type="text/css">
-		header{	width: 350px;}
+		header{	font-size: 17px;text-align:center; width: 350px; font-family: 'Brush Script MT';}
 		th{	width: 70px;}
 		td{ text-align:center;}
-		body {background-image: url(background.gif);background-repeat: repeat;}
+		body {background:#000;background-image: url(Ragnaros.png);background-repeat:no-repeat;font-family: TimesNewRoman;color:white;}
 		#nextClass { font-size: 15px;}
+		#classDetail { font-size: 15px;}
+		#detailSchedule { background-size:100%100%;  padding: 0.5cm;background-image: url(schedulebackground.png1);}
+		.btn1 {font-size: 20px;text-align:center;color:#F00; font-family:Papyrus, fantasy;font-weight:900}
 	</style>
 </head>
 <body>
@@ -16,7 +19,7 @@
 </header>
 
 <div>
-    <section id="nextClass"><Strong>Next Class</Strong>
+    <section id="nextClass"><Strong><i>Next Class</i></Strong>
         <h1 id="courseName">Course Name</h1>
         <h1 id="courseTime">Time</h1>
         <h1 id="courseLocation">Location</h1>
@@ -24,7 +27,7 @@
 </div>
 
 
-<button class="btn1">Show Schedule</button>
+<p class="btn1">By fire be purged!</p>
 <div id="detailSchedule">
 	<table id="classSchedule">
 		
@@ -55,8 +58,8 @@
         </details>
     </section>
 </div>
-<a href="background.html">setting</a>
-<a href="https://tritoned.ucsd.edu/" id="badges" target="_blank"></a>
+<a href="background.html">setting</a><br>
+TritonEd notice: <a href="https://tritoned.ucsd.edu/" id="badges" target="_blank"></a>
 <script src ="jquery-1.8.3.min.js"></script>
 <script src="popup.js"></script>
 <script src="classLink.js"></script>

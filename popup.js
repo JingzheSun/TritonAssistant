@@ -36,7 +36,7 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 		$("#classSchedule tr:last").after(newRow);
 	}
 	for(key in classInfo){
-		var detail = key+" "+classInfo[key][0]+" "+classInfo[key][1]+" "+classInfo[key][2];
+		var detail = key+"\t"+classInfo[key][0]+"\t"+classInfo[key][1]+"\t"+classInfo[key][2];
 		$("#classDetail").append(detail+"<br>");
 	}
     findNextClass(classInfo);
@@ -93,12 +93,12 @@ $(document).ready(function(){
   $(".btn1").click(function(){
 	if (expand){
 		$("#detailSchedule").slideUp();
-		$(".btn1").html("Show Schedule");
+		$(".btn1").html("By fire be purged!");
 		expand++;
 	}
 	else{
 		$("#detailSchedule").slideDown();
-		$(".btn1").html("Hide Schedule");
+		$(".btn1").html("Behold Ragnaros the Firelord!");
 		expand--;
 	}
   });
@@ -107,7 +107,7 @@ $(document).ready(function(){
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-    	alert(/La Jolla/gm.exec(xmlhttp.responseText));
+  //  	alert(/La Jolla/gm.exec(xmlhttp.responseText));
     }
 }
 xmlhttp.open("GET", "https://weather.com/weather/today/l/32.88,-117.24", true);
