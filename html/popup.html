@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TritonAssistant</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/popup.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+</head>
+<body class="container">
+    <header>
+        <Strong>TritonAssistant</Strong>
+        <img src="../img/icon512.png" id = "headerImg">
+    </header>
+
+    <div class="menu" id="next">
+        <section id="nextClass"><Strong>Next Class:</Strong>
+            <h2 id="courseName">Course Name</h2>
+            <h2 id="courseTime">Time</h2>
+            <h2 id="courseLocation">Location</h2>
+        </section>
+    </div>
+
+
+    <div id="detailSchedule" class="menu">
+        <table id="classSchedule"></table>
+        <hr>
+        <ul id="classDetail"></ul>
+    </div>
+
+
+    <div id="link" class="menu">
+        <div id="courseLinks">
+            Course Name: <input type="text" id="description" placeholder="ECE 123A"><br>
+            Course Website: <input type="text" id="courseWeb" placeholder="http://example.com">
+            <button id="addClass">ADD</button>
+        </div>
+    </div>
+
+    <div class="menuBar">
+        <button name="next" class="tablink" id="defaultOpen"></button>
+        <button name="detailSchedule" class="tablink""></button>
+        <button name="link" class="tablink""></button>
+    </div>
+
+
+    <footer>
+        TritonEd notice: <a href="https://tritoned.ucsd.edu/" id="badges" target="_blank"></a>
+        <span id="account">
+
+            <a href="background.html" ><i class="fa fa-cog" aria-hidden="true"></i> Account Setting</a>
+        </span>
+    </footer>
+
+    <script src ="../lib/jquery-3.2.1.min.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/classLink.js"></script>
+</body>
+</html>

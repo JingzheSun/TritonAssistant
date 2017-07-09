@@ -1,29 +1,29 @@
 {
    "background": {
-	  "page": "background.html"
+	  "page": "html/background.html"
    },
    "browser_action": {
-      "default_icon": "icon48.png",
-      "default_popup": "popup.html"
+      "default_icon": "img/icon48.png",
+      "default_popup": "html/popup.html"
    },
    "content_scripts": [ {
       "all_frames" : true,
-      "js": [ "login_Tritonlink.js" ],
+      "js": ["lib/jquery-3.2.1.min.js", "js/login_Tritonlink.js"],
       "matches": [ "*://a4.ucsd.edu/tritON/Authn/*" ]
    }, {
 	  "all_frames" : true,
-      "js": [ "schedule.js","jquery-1.8.3.min.js" ],
+      "js": ["lib/jquery-3.2.1.min.js", "js/schedule.js"],
       "matches": [ "*://act.ucsd.edu/myTritonlink20/display.htm" ]
    },{
       "all_frames" : true,
-      "js": [ "login_Tritoned.js" ],
+      "js": ["lib/jquery-3.2.1.min.js", "js/login_Tritoned.js" ],
       "matches": [ "*://tritoned.ucsd.edu/*" ]
    }],
    "description": "Chrome Extension for UCSD",
    "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
    },
    "manifest_version": 2,
    "name": "TritonAssistant",

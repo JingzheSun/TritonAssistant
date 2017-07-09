@@ -1,0 +1,92 @@
+body{
+	background: #43C6AC;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #191654, #43C6AC,#456);  
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #191654, #43C6AC,#456);
+	 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+}
+
+header{	
+	font-size: 30px;
+	text-align:center; 
+	width: 350px; 
+	font-family: 'Kurale', serif;
+	margin: 10px;
+}
+
+footer{
+	margin: 5px;
+}
+		
+th{	
+	width: 70px;
+	text-align:center;
+}
+
+td{ 
+	text-align:center;
+	font-size: 13px;
+}
+
+.menuBar{
+	margin: 5px;
+	text-align: center;
+}
+
+.tablink {
+	background: white;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    padding: none;
+    width: 15px;
+    margin: 5px 20px;
+    height: 15px;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+ 
+.menu {
+    color: white;
+    display: none;
+    padding: none;
+    text-align: left;
+}
+
+.menu input{
+    color: black;
+    padding: none;
+    text-align: left;
+}
+
+#headerImg{ 
+	width: 30px;
+	height: 30px;
+	margin: 0px;
+	padding: none;
+}
+
+#account{
+	float: right;
+}
+
+#account a{
+	color: lightgray;
+	text-decoration: underline;
+}
+
+#classDetail {
+	font-size: 15px;
+	padding: 0px;
+	margin: 5px;
+	border: none;
+}
+
+#classSchedule {
+	padding: none;
+	margin: none;
+}
