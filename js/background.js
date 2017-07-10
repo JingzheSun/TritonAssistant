@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 $("#login").click(function (){
     localStorage.setItem("username", $("#username").val());
     localStorage.setItem("password", $("#password").val());
-    alert($("#username").val())
+    alert($("#username").val()+" restart Browser")
 });
 
 //remember the last input

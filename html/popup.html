@@ -21,20 +21,28 @@
         </section>
     </div>
 
-
     <div id="detailSchedule" class="menu">
         <table id="classSchedule"></table>
         <hr>
         <ul id="classDetail"></ul>
     </div>
 
-
     <div id="link" class="menu">
-        <div id="courseLinks">
-            Course Name: <input type="text" id="description" placeholder="ECE 123A"><br>
-            Course Website: <input type="text" id="courseWeb" placeholder="http://example.com">
+        <div id="addLink">
+            Course Name: <br>
+            <input type="text" id="description" placeholder="ECE 123A piazza"><br>
+            Course Website: <br>
+            <select id="protocol" >
+                <option value="http://" selected = "selected">http</option> 
+                <option value="https://">https</option> 
+            </select>
+            <input type="text" id="courseWeb" placeholder="www.example.com">
             <button id="addClass">ADD</button>
         </div>
+        <div>
+            <ul id="courseLinks">
+            </ul>
+        </div>        
     </div>
 
     <div class="menuBar">
@@ -43,17 +51,15 @@
         <button name="link" class="tablink""></button>
     </div>
 
-
     <footer>
         TritonEd notice: <a href="https://tritoned.ucsd.edu/" id="badges" target="_blank"></a>
         <span id="account">
-
             <a href="background.html" ><i class="fa fa-cog" aria-hidden="true"></i> Account Setting</a>
         </span>
     </footer>
 
     <script src ="../lib/jquery-3.2.1.min.js"></script>
     <script src="../js/popup.js"></script>
-    <script src="../js/classLink.js"></script>
+    <script src="../js/classLinks.js"></script>
 </body>
 </html>

@@ -10,7 +10,6 @@
                 loginField.val(response.username);
                 passField.val(response.password);
                 btm.click();
-                alert("Loged In");//test
             }
         })
     };
