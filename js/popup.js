@@ -42,7 +42,7 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 	if (response.badges)
 		$("#badges").html(response.badges);
 	else
-		$("#badges").html('click to update cookie');
+		$("#badges").html('update cookie');
     });
 })();
 
@@ -99,6 +99,10 @@ $("#defaultOpen").click();
         	var weather = JSON.parse(xmlhttp.response)[0];
         	$('#headerImg').attr('src', 'https://developer.accuweather.com/sites/default/files/0' + weather['WeatherIcon'] + '-s.png');
             //alert(weather['WeatherText'] + ':' + weather['Temperature']['Metric']['Value'] + ',' +weather['WeatherIcon']);
+            $('#weatherInfo').fadeOut(500, function(){
+            	$('#weatherInfo').text(weather['WeatherText']);	
+            });
+            $('#weatherInfo').fadeIn(500);
         }
     }
     xmlhttp.open("GET", "http://dataservice.accuweather.com/currentconditions/v1/2168186?apikey=FYirlAWPh3rwyyibVEpeA2deYQtNQ1Gk", true);
