@@ -84,10 +84,14 @@ function findNextClass(classInfo){
 
 
 $(".tablink").on("click", function(){
+	$('#weather').css('display', 'none');
 	$(".tablink").css("background", "lightgray");
 	$(this).css("background", "white")
 	$(".menu").slideUp();
     $('#'+this.name).slideDown();
+    if(this.id == 'defaultOpen'){
+    	$('#weather').css('display', 'block');
+    }
 });
 $("#defaultOpen").click();
 
