@@ -92,12 +92,15 @@ $(".tablink").on("click", function(){
 $("#defaultOpen").click();
 
 
-/*
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-  //  	alert(/La Jolla/gm.exec(xmlhttp.responseText));
+(function getWeather() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        	var weather = JSON.parse(xmlhttp.response)[0];
+        	$('#headerImg').attr('src', 'https://developer.accuweather.com/sites/default/files/0' + weather['WeatherIcon'] + '-s.png');
+            //alert(weather['WeatherText'] + ':' + weather['Temperature']['Metric']['Value'] + ',' +weather['WeatherIcon']);
+        }
     }
-}
-xmlhttp.open("GET", "https://weather.com/weather/today/l/32.88,-117.24", true);
-xmlhttp.send();*/
+    xmlhttp.open("GET", "http://dataservice.accuweather.com/currentconditions/v1/2168186?apikey=FYirlAWPh3rwyyibVEpeA2deYQtNQ1Gk", true);
+    xmlhttp.send();
+})();
