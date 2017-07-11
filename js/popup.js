@@ -99,8 +99,9 @@ $("#defaultOpen").click();
         	var weather = JSON.parse(xmlhttp.response)[0];
         	$('#headerImg').attr('src', 'https://developer.accuweather.com/sites/default/files/0' + weather['WeatherIcon'] + '-s.png');
             //alert(weather['WeatherText'] + ':' + weather['Temperature']['Metric']['Value'] + ',' +weather['WeatherIcon']);
+            (weather['Temperature']);
             $('#weatherInfo').fadeOut(500, function(){
-            	$('#weatherInfo').text(weather['WeatherText']);	
+            	$('#weatherInfo').html(weather['WeatherText'] + '<br>' + weather['Temperature']['Imperial']['Value'] + '&#176;F');	
             });
             $('#weatherInfo').fadeIn(500);
         }
