@@ -90,29 +90,28 @@ $(".tablink").on("click", function(){
 });
 $("#defaultOpen").click();
 
-function zfill(num){
-    if (num.length == 2){
-        return num;
-    }else{
-        return '0' + num;
-    };
-}
+// function zfill(num){
+//     if (num.length == 2){
+//         return num;
+//     }else{
+//         return '0' + num;
+//     };
+// }
 
 (function getWeather() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        	var weather = JSON.parse(xmlhttp.response)[0];
-        	$('#headerImg').attr('src', 'https://developer.accuweather.com/sites/default/files/' + weather['WeatherIcon'] + '-s.png');
-            //alert(weather['WeatherText'] + ':' + weather['Temperature']['Metric']['Value'] + ',' +weather['WeatherIcon']);
-            (weather['Temperature']);
+        	var weather = JSON.parse(xmlhttp.response);
+        	console.log(weather['weather']);
+        	$('#headerImg').attr('src', 'http://openweathermap.org/img/w/' + weather['weather'][0]["icon"]+'.png');
             $('#weatherInfo').fadeOut(500, function(){
-            	$('#weatherInfo').html(weather['WeatherText'] + '<br>' + weather['Temperature']['Imperial']['Value'] + '&#176;F');	
+            	$('#weatherInfo').html(weather['weather'][0]['description'] + '<br>' + Math.round((weather['main']['temp'] - 273.15)*1.8 + 32) + '&#176;F');	
             });
             $('#weatherInfo').fadeIn(500);
         }
     }
-    xmlhttp.open("GET", "http://dataservice.accuweather.com/currentconditions/v1/2168186?apikey=FYirlAWPh3rwyyibVEpeA2deYQtNQ1Gk", true);
+    xmlhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=LaJolla,us&appid=bae0a9547dde0f7bbce49aba912c8eda", true);
     xmlhttp.send();
 })();
 
