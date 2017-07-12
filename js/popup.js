@@ -37,13 +37,8 @@ $("#classSchedule").prepend("<tr><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F
 		$("#classDetail").append(detail+"<br>");
 	}
     findNextClass(classInfo);
+    updateBudges();
 
-    chrome.runtime.sendMessage({badges: "require"}, function(response) {
-	if (response.badges)
-		$("#badges").html(response.badges);
-	else
-		$("#badges").html('update cookie');
-    });
 })();
 
 function findNextClass(classInfo){
@@ -120,3 +115,30 @@ function zfill(num){
     xmlhttp.open("GET", "http://dataservice.accuweather.com/currentconditions/v1/2168186?apikey=FYirlAWPh3rwyyibVEpeA2deYQtNQ1Gk", true);
     xmlhttp.send();
 })();
+
+function updateBudges(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var badgexmlhttp = new XMLHttpRequest();
+            badgexmlhttp.onreadystatechange = function () {
+                if (badgexmlhttp.readyState == 4 && badgexmlhttp.status == 200) {
+                    /:(\w+),/gm.exec(badgexmlhttp.responseText);
+                    var budges = RegExp.$1;
+                    //localStorage.setItem("badges", RegExp.$1);
+					//alert(budges);
+					if (budges)
+						$("#badges").html(budges);
+					else
+						$("#badges").html('update cookie');
+                }
+            }
+            badgexmlhttp.open("POST", "https://tritoned.ucsd.edu/webapps/portal/dwr_open/call/plaincall/ToolActivityService.getActivityForAllTools.dwr", true);
+            badgexmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            badgexmlhttp.send('callCount=1&page=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&httpSessionId=' + localStorage['tritonedcookie'] +'&scriptSessionId=8A22AEE4C7B3F9CA3A094735175A6B14249&c0-scriptName=ToolActivityService&c0-methodName=getActivityForAllTools&c0-id=0&batchId=1');
+        }
+    }
+    xmlhttp.open("POST", "https://tritoned.ucsd.edu/webapps/login/", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("action=login&login=Login&new_loc=&password=" + localStorage['password'] +"&user_id="+localStorage['username']);
+}
