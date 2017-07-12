@@ -95,13 +95,20 @@ $(".tablink").on("click", function(){
 });
 $("#defaultOpen").click();
 
+function zfill(num){
+    if (num.length == 2){
+        return num;
+    }else{
+        return '0' + num;
+    };
+}
 
 (function getWeather() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         	var weather = JSON.parse(xmlhttp.response)[0];
-        	$('#headerImg').attr('src', 'https://developer.accuweather.com/sites/default/files/0' + weather['WeatherIcon'] + '-s.png');
+        	$('#headerImg').attr('src', 'https://developer.accuweather.com/sites/default/files/' + weather['WeatherIcon'] + '-s.png');
             //alert(weather['WeatherText'] + ':' + weather['Temperature']['Metric']['Value'] + ',' +weather['WeatherIcon']);
             (weather['Temperature']);
             $('#weatherInfo').fadeOut(500, function(){
