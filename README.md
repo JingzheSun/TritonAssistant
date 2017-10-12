@@ -1,2 +1,2 @@
-# README
-Don't read me
+# TritonAssistant
+Chrome Extension for UCSD student.
